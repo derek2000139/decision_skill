@@ -1,3 +1,5 @@
+[English](README.en.md) | [中文](README.md)
+
 # Decision Advisor - 人生决策器
 
 > 融合心理学、行为经济学与管理咨询方法论的专业决策顾问。
