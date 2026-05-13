@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Intent Classification Schema",
+  "description": "Schema for intent classification output",
+  "type": "object",
+  "properties": {
+    "scene_type": {
+      "type": "string",
+      "enum": ["daily_life", "career", "venture", "strategy"],
+      "description": "The decision scene type"
+    },
+    "complexity": {
+      "type": "string",
+      "enum": ["low", "medium", "high"],
+      "description": "Decision complexity level"
+    },
+    "time_sensitivity": {
+      "type": "string",
+      "enum": ["urgent", "normal", "long_term"],
+      "description": "Time sensitivity of the decision"
+    },
+    "stakeholders": {
+      "type": "string",
+      "enum": ["individual", "team", "organization"],
+      "description": "Primary stakeholders involved"
+    },
+    "detected_keywords": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Keywords detected in user input"
+    },
+    "recommended_frameworks": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Recommended decision frameworks"
+    },
+    "detected_biases_risk": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Potential cognitive biases detected"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Classification confidence score"
+    },
+    "explanation": {
+      "type": "string",
+      "description": "Human-readable explanation of the classification"
+    }
+  },
+  "required": [
+    "scene_type",
+    "complexity",
+    "time_sensitivity",
+    "stakeholders",
+    "detected_keywords",
+    "recommended_frameworks",
+    "detected_biases_risk",
+    "confidence",
+    "explanation"
+  ]
+}

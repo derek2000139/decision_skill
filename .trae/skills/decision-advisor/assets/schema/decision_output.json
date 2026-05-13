@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Decision Output Schema",
+  "description": "Schema for final decision output",
+  "type": "object",
+  "properties": {
+    "framework": {
+      "type": "string",
+      "description": "The decision framework used"
+    },
+    "winner": {
+      "type": ["string", "null"],
+      "description": "The recommended option or conclusion"
+    },
+    "scores": {
+      "type": "object",
+      "description": "Detailed scoring information"
+    },
+    "details": {
+      "type": "object",
+      "description": "Additional details and analysis"
+    },
+    "recommendation": {
+      "type": "string",
+      "description": "Human-readable recommendation"
+    },
+    "confidence_level": {
+      "type": "string",
+      "enum": ["high", "medium", "low"],
+      "description": "Confidence level of the recommendation"
+    },
+    "bias_warnings": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Cognitive bias warnings"
+    },
+    "sources": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Academic and professional sources cited"
+    }
+  },
+  "required": [
+    "framework",
+    "winner",
+    "scores",
+    "details",
+    "recommendation",
+    "confidence_level",
+    "bias_warnings",
+    "sources"
+  ]
+}
